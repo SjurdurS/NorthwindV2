@@ -1,1 +1,9 @@
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Debug\Northwind.exe.config
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.csprojResolveAssemblyReference.cache
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Debug\Northwind.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Debug\Northwind.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Debug\LINQtoCSV.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.Properties.Resources.resources
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.csproj.GenerateResource.Cache
