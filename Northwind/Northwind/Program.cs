@@ -46,15 +46,9 @@ namespace Northwind
         /// </summary>
         private void UpdateObjectReferences()
         {
-            foreach (Product p in Products)
-            {
-                p.GetCategoryReference(Categories);
-            }
+            Products.ForEach(p => p.GetCategoryReference(Categories));
 
-            foreach (OrderDetail o in OrderDetails)
-            {
-                o.GetProductReference(Products);
-            }
+            OrderDetails.ForEach(o => o.GetProductReference(Products));
         }
 
         public List<Product> GetProducts()
@@ -80,9 +74,9 @@ namespace Northwind
             var p = new Program();
             p.ReadFiles();
 
-            foreach (var item in p.Orders)
+            foreach (var item in p.OrderDetails)
             {
-                
+                Console.WriteLine(item.Product.Name);
             }
 
         }
