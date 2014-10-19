@@ -44,21 +44,9 @@ namespace Northwind
         /// <param name="categories">IEnumerable of CategoriesEnumerable</param>
         public void GetCategoryReference(List<Category> categories)
         {
-            this.Category = (from c in categories
-                            where c.Id == this.CategoryId
-                            select c).FirstOrDefault();
-
-            /*
-            foreach (Category cat in categories)
-            {
-                if (CategoryId == cat.Id)
-                {
-                    Category = cat;
-                    break;
-                }
-            }
-            */
+            Category = (from c in categories
+                where c.Id == CategoryId
+                select c).FirstOrDefault();
         }
-
     }
 }

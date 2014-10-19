@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using LINQtoCSV;
 
@@ -27,24 +25,14 @@ namespace Northwind
 
 
         /// <summary>
-        /// Get the Product object reference. Search through a list of categories to find the same product ID.
+        ///     Get the Product object reference. Search through a list of categories to find the same product ID.
         /// </summary>
         /// <param name="products">IEnumerable of Products</param>
         public void GetProductReference(List<Product> products)
         {
-            this.Product = (from p in products
-                             where p.Id == this.ProductId
-                             select p).FirstOrDefault();
-            /*
-            foreach (Product product in products)
-            {
-                if (ProductId == product.Id)
-                {
-                    this.Product = product;
-                    break;
-                }
-            }
-             */
+            Product = (from p in products
+                where p.Id == ProductId
+                select p).FirstOrDefault();
         }
     }
 }
