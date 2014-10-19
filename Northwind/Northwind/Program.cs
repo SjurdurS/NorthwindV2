@@ -7,7 +7,7 @@ namespace Northwind
         private static void Main(string[] args)
         {
             var r = new Repository();
-            r.ReadFiles();
+            r.LoadFiles();
 
             foreach (Order item in r.GetOrders())
             {

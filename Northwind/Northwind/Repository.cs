@@ -14,7 +14,7 @@ namespace Northwind
         /// <summary>
         ///     Parse the CSV files into
         /// </summary>
-        public void ReadFiles()
+        public void LoadFiles()
         {
             var inputFileDescription = new CsvFileDescription
             {
