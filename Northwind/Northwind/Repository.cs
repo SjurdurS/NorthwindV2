@@ -11,8 +11,6 @@ namespace Northwind
         private List<Order> Orders;
         private List<Product> Products;
 
-        private int maxOrderID = 0;
-
         /// <summary>
         ///     Parse the CSV files into
         /// </summary>
@@ -69,6 +67,7 @@ namespace Northwind
 
         public void CreateOrder(Order order)
         {
+            // Or store max in field variable.
             var maxId = Orders.Max(x => x.OrderId);
             order.OrderId = maxId + 1;
             Orders.Add(order);
