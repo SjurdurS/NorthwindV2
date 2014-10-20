@@ -6,11 +6,11 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Shippers
+    public partial class Shipper
     {
-        public Shippers()
+        public Shipper()
         {
-            Orders = new HashSet<Orders>();
+            Orders = new HashSet<Order>();
         }
 
         [Key]
@@ -23,6 +23,6 @@ namespace NorthWind_Part_3
         [StringLength(24)]
         public string Phone { get; set; }
 
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

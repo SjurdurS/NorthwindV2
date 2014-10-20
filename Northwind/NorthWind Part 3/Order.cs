@@ -6,11 +6,11 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Orders
+    public partial class Order
     {
-        public Orders()
+        public Order()
         {
-            Order_Details = new HashSet<Order_Details>();
+            Order_Details = new HashSet<Order_Detail>();
         }
 
         [Key]
@@ -52,10 +52,10 @@ namespace NorthWind_Part_3
 
         public virtual Customers Customers { get; set; }
 
-        public virtual Employees Employees { get; set; }
+        public virtual Employee Employee { get; set; }
 
-        public virtual ICollection<Order_Details> Order_Details { get; set; }
+        public virtual ICollection<Order_Detail> Order_Details { get; set; }
 
-        public virtual Shippers Shippers { get; set; }
+        public virtual Shipper Shipper { get; set; }
     }
 }

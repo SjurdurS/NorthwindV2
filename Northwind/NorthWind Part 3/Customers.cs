@@ -10,8 +10,8 @@ namespace NorthWind_Part_3
     {
         public Customers()
         {
-            Orders = new HashSet<Orders>();
-            CustomerDemographics = new HashSet<CustomerDemographics>();
+            Orders = new HashSet<Order>();
+            CustomerDemographics = new HashSet<CustomerDemographic>();
         }
 
         [Key]
@@ -49,8 +49,8 @@ namespace NorthWind_Part_3
         [StringLength(24)]
         public string Fax { get; set; }
 
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
-        public virtual ICollection<CustomerDemographics> CustomerDemographics { get; set; }
+        public virtual ICollection<CustomerDemographic> CustomerDemographics { get; set; }
     }
 }

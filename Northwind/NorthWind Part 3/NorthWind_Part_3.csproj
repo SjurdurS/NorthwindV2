@@ -65,20 +65,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categories.cs" />
-    <Compile Include="CustomerDemographics.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CustomerDemographic.cs" />
     <Compile Include="Customers.cs" />
-    <Compile Include="Employees.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="NorthWindContext.cs" />
-    <Compile Include="Orders.cs" />
-    <Compile Include="Order_Details.cs" />
-    <Compile Include="Products.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Order_Detail.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Region.cs" />
-    <Compile Include="Shippers.cs" />
-    <Compile Include="Suppliers.cs" />
-    <Compile Include="Territories.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="Shipper.cs" />
+    <Compile Include="Supplier.cs" />
+    <Compile Include="Territory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -109,6 +111,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind\Northwind.csproj">
+      <Project>{582C4FB9-EE3F-4C9D-983D-8E06E9256A78}</Project>
+      <Name>Northwind</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

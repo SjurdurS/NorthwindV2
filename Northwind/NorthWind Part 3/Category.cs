@@ -6,11 +6,11 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Categories
+    public partial class Category
     {
-        public Categories()
+        public Category()
         {
-            Products = new HashSet<Products>();
+            Products = new HashSet<Product>();
         }
 
         [Key]
@@ -26,6 +26,6 @@ namespace NorthWind_Part_3
         [Column(TypeName = "image")]
         public byte[] Picture { get; set; }
 
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

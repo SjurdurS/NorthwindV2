@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind", "Northwind.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestNorthWind", "..\UnitTestNorthWind\UnitTestNorthWind.csproj", "{C57D7BAA-EA0B-49C6-ACCA-F00F69D47750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind Part 3", "..\NorthWind Part 3\NorthWind Part 3.csproj", "{3EF9436C-8184-45A8-863B-08A37F4CA2D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind_Part_3", "..\NorthWind Part 3\NorthWind_Part_3.csproj", "{3EF9436C-8184-45A8-863B-08A37F4CA2D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

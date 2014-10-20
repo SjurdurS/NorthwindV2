@@ -11,7 +11,7 @@ namespace NorthWind_Part_3
     {
         public Region()
         {
-            Territories = new HashSet<Territories>();
+            Territories = new HashSet<Territory>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -21,6 +21,6 @@ namespace NorthWind_Part_3
         [StringLength(50)]
         public string RegionDescription { get; set; }
 
-        public virtual ICollection<Territories> Territories { get; set; }
+        public virtual ICollection<Territory> Territories { get; set; }
     }
 }

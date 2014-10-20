@@ -6,9 +6,10 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class CustomerDemographics
+    public partial class CustomerDemogr
+        aphic
     {
-        public CustomerDemographics()
+        public CustomerDemographic()
         {
             Customers = new HashSet<Customers>();
         }

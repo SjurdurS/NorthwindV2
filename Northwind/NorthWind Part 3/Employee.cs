@@ -6,13 +6,13 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Employees
+    public partial class Employee
     {
-        public Employees()
+        public Employee()
         {
-            Employees1 = new HashSet<Employees>();
-            Orders = new HashSet<Orders>();
-            Territories = new HashSet<Territories>();
+            Employees1 = new HashSet<Employee>();
+            Orders = new HashSet<Order>();
+            Territories = new HashSet<Territory>();
         }
 
         [Key]
@@ -68,12 +68,12 @@ namespace NorthWind_Part_3
         [StringLength(255)]
         public string PhotoPath { get; set; }
 
-        public virtual ICollection<Employees> Employees1 { get; set; }
+        public virtual ICollection<Employee> Employees1 { get; set; }
 
-        public virtual Employees Employees2 { get; set; }
+        public virtual Employee Employees2 { get; set; }
 
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
-        public virtual ICollection<Territories> Territories { get; set; }
+        public virtual ICollection<Territory> Territories { get; set; }
     }
 }

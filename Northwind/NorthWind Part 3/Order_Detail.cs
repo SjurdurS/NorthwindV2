@@ -7,7 +7,7 @@ namespace NorthWind_Part_3
     using System.Data.Entity.Spatial;
 
     [Table("Order Details")]
-    public partial class Order_Details
+    public partial class Order_Detail
     {
         [Key]
         [Column(Order = 0)]
@@ -26,8 +26,8 @@ namespace NorthWind_Part_3
 
         public float Discount { get; set; }
 
-        public virtual Orders Orders { get; set; }
+        public virtual Order Order { get; set; }
 
-        public virtual Products Products { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

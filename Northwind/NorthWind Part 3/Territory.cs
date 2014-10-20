@@ -6,11 +6,12 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Territories
+    public partial class Territ
+        ory
     {
-        public Territories()
+        public Territory()
         {
-            Employees = new HashSet<Employees>();
+            Employee = new HashSet<Employee>();
         }
 
         [Key]
@@ -25,6 +26,6 @@ namespace NorthWind_Part_3
 
         public virtual Region Region { get; set; }
 
-        public virtual ICollection<Employees> Employees { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }
