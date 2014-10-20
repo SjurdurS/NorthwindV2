@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +13,20 @@ namespace NorthWind_Part_3
         ///     Returns all products.
         /// </summary>
         /// <returns>Returns all of the Product in the repository</returns>
-        List<Product> Products();
+        DbSet<Product> Products();
 
         /// <summary>
         ///     Returns all categories.
         /// </summary>
         /// <returns>Returns all of the Category in the repository.</returns>
-        List<Category> Categories();
+        DbSet<Category> Categories();
 
 
         /// <summary>
         ///     Returns all orders.
         /// </summary>
         /// <returns>Returns all of the Order in the repository.</returns>
-        List<Order> Orders();
+        DbSet<Order> Orders();
 
         /// <summary>
         ///     Add an order to the repository.

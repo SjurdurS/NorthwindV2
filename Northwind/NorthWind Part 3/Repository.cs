@@ -9,22 +9,25 @@ namespace NorthWind_Part_3
 {
     class Repository : IRepository
     {
-        public List<Northwind.Product> Products()
+
+        public Repository(IRepository)
+
+        public List<Product> Products()
         {
             throw new NotImplementedException();
         }
 
-        public List<Northwind.Category> Categories()
+        public List<Category> Categories()
         {
             throw new NotImplementedException();
         }
 
-        public List<Northwind.Order> Orders()
+        public List<Order> Orders()
         {
             throw new NotImplementedException();
         }
 
-        public long CreateOrder(Northwind.Order order)
+        public long CreateOrder(Order order)
         {
             throw new NotImplementedException();
         }
