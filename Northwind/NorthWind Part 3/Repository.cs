@@ -11,9 +11,19 @@ namespace NorthWind_Part_3
             _context = context ?? new NorthWindContext();
         }
 
-        public void test()
+        public void AddOrder(string name, string address, string city, string region, string postalCode, string country)
         {
-            _context.CreateOrder(lkksdkakaæaklæ)
+             var order = new Order
+            {
+                ShipName = name,
+                ShipAddress = address,
+                ShipCity = city,
+                ShipRegion = region,
+                ShipPostalCode = postalCode,
+                ShipCountry = country,
+                RequiredDate = DateTime.Now
+            };
+            _context.CreateOrder(order);
         }
 
         public void Dispose()
