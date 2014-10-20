@@ -53,6 +53,7 @@ namespace NorthWind_Part_3
         public long CreateOrder(Order order)
         {
             var maxId = Orders.Max(x => x.OrderID);
+            order.OrderID = maxId + 1;
             Orders.Add(order);
             return (maxId + 1);
         }

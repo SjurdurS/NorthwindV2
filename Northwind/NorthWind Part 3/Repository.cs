@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Northwind;
 
 namespace NorthWind_Part_3
 {
-    class Repository : IDisposable
+    internal class Repository : IDisposable
     {
         private readonly INorthWindContext _context;
 
@@ -16,29 +11,14 @@ namespace NorthWind_Part_3
             _context = context ?? new NorthWindContext();
         }
 
-        public List<Product> Products()
+        public void test()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Category> Categories()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Order> Orders()
-        {
-            throw new NotImplementedException();
-        }
-
-        public long CreateOrder(Order order)
-        {
-            throw new NotImplementedException();
+            _context.CreateOrder(lkksdkakaæaklæ)
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
