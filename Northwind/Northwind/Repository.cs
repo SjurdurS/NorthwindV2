@@ -36,7 +36,7 @@ namespace Northwind
         }
 
         /// <summary>
-        ///     Parse the CSV files into
+        ///     Parse the CSV files into the repository.
         /// </summary>
         public void LoadFiles()
         {
@@ -73,6 +73,5 @@ namespace Northwind
 
             _orderDetails.ForEach(o => o.GetProductReference(_products));
         }
-
     }
 }

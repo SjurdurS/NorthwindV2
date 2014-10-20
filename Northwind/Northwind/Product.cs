@@ -48,8 +48,8 @@ namespace Northwind
         public void GetCategoryReference(List<Category> categories)
         {
             Category = (from c in categories
-                        where c.Id == CategoryId
-                        select c).FirstOrDefault();
+                where c.Id == CategoryId
+                select c).FirstOrDefault();
         }
     }
 }
