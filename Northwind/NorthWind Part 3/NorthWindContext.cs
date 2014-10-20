@@ -1,11 +1,43 @@
+using System;
+using System.Data.Entity;
+using System.Linq;
+using System.Security;
+
 namespace NorthWind_Part_3
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
+    public interface INorthWindContext : IDisposable
+    {
+        /// <summary>
+        ///     Returns all products.
+        /// </summary>
+        /// <returns>Returns all of the Product in the repository</returns>
+        DbSet<Product> Products { get; set; }
 
-    public partial class NorthWindContext : DbContext
+        /// <summary>
+        ///     Returns all categories.
+        /// </summary>
+        /// <returns>Returns all of the Category in the repository.</returns>
+        DbSet<Category> Categories { get; set; }
+
+
+        /// <summary>
+        ///     Returns all orders.
+        /// </summary>
+        /// <returns>Returns all of the Order in the repository.</returns>
+        DbSet<Order> Orders { get; set; }
+
+        /// <summary>
+        ///     Add an order to the repository.
+        ///     Must add order id (max id + 1) to the order before storing it.
+        /// </summary>
+        /// <param name="order">The Order to add to the repository</param>
+        /// <returns>Returns the id of the newly added order</returns>
+        long CreateOrder(Order order);
+
+        int SaveChanges();
+    }
+
+    public class NorthWindContext : DbContext, INorthWindContext
     {
         public NorthWindContext()
             : base("name=NorthWindContext")
@@ -18,6 +50,13 @@ namespace NorthWind_Part_3
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Order_Detail> Order_Details { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public long CreateOrder(Order order)
+        {
+            var maxId = Orders.Max(x => x.OrderID);
+            Orders.Add(order);
+            return (maxId + 1);
+        }
+
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Region> Region { get; set; }
         public virtual DbSet<Shipper> Shippers { get; set; }

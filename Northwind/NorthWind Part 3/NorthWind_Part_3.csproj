@@ -69,7 +69,6 @@
     <Compile Include="CustomerDemographic.cs" />
     <Compile Include="Customers.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="IRepository.cs" />
     <Compile Include="NorthWindContext.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Order_Detail.cs" />

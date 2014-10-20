@@ -7,10 +7,14 @@ using Northwind;
 
 namespace NorthWind_Part_3
 {
-    class Repository : IRepository
+    class Repository : IDisposable
     {
+        private readonly INorthWindContext _context;
 
-        public Repository(IRepository)
+        public Repository(INorthWindContext context = null)
+        {
+            _context = context ?? new NorthWindContext();
+        }
 
         public List<Product> Products()
         {
@@ -28,6 +32,11 @@ namespace NorthWind_Part_3
         }
 
         public long CreateOrder(Order order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
         {
             throw new NotImplementedException();
         }

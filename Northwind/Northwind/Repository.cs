@@ -26,13 +26,18 @@ namespace Northwind
             return _orders;
         }
 
+        /// <summary>
+        ///     Create a new order and add it to the repository.
+        /// </summary>
+        /// <param name="order">The order to create</param>
+        /// <returns>Returns the new maximum id in the list.</returns>
         public long CreateOrder(Order order)
         {
             // Or store max in field variable.
             long maxId = _orders.Max(x => x.OrderId);
             order.OrderId = maxId + 1;
             _orders.Add(order);
-            return maxId;
+            return (maxId + 1);
         }
 
         /// <summary>

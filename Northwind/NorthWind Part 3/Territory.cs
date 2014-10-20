@@ -6,8 +6,7 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Territ
-        ory
+    public partial class Territory
     {
         public Territory()
         {
