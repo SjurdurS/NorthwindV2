@@ -1,0 +1,8 @@
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\bin\Debug\UnitTestNorthWind.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\bin\Debug\UnitTestNorthWind.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\bin\Debug\Northwind.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\bin\Debug\LINQtoCSV.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\bin\Debug\Northwind.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\obj\Debug\UnitTestNorthWind.csprojResolveAssemblyReference.cache
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\obj\Debug\UnitTestNorthWind.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\UnitTestNorthWind\obj\Debug\UnitTestNorthWind.pdb
