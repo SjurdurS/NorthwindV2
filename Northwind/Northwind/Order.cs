@@ -4,7 +4,7 @@ using LINQtoCSV;
 namespace Northwind
 {
     /// <summary>
-    /// This class represents an order in northwind project. 
+    /// This class represents an order in the northwind project. 
     /// </summary>
     public class Order
     {
