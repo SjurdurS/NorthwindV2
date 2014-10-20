@@ -4,12 +4,35 @@ using LINQtoCSV;
 
 namespace Northwind
 {
-    internal class Repository
+    internal class Repository : IRepository
     {
-        private List<Category> Categories;
-        private List<OrderDetail> OrderDetails;
-        private List<Order> Orders;
-        private List<Product> Products;
+        private List<Category> _categories;
+        private List<OrderDetail> _orderDetails;
+        private List<Order> _orders;
+        private List<Product> _products;
+
+        public IEnumerable<Product> Products()
+        {
+            return _products;
+        }
+
+        public IEnumerable<Category> Categories()
+        {
+            return _categories;
+        }
+
+        public IEnumerable<Order> Orders()
+        {
+            return _orders;
+        }
+
+        public void CreateOrder(Order order)
+        {
+            // Or store max in field variable.
+            long maxId = _orders.Max(x => x.OrderId);
+            order.OrderId = maxId + 1;
+            _orders.Add(order);
+        }
 
         /// <summary>
         ///     Parse the CSV files into
@@ -32,10 +55,10 @@ namespace Northwind
             IEnumerable<OrderDetail> orderDetailsEnumerable = cc.Read<OrderDetail>("../../Resources/order_details.csv",
                 inputFileDescription);
 
-            Categories = categoriesEnumerable.ToList();
-            Products = productsEnumerable.ToList();
-            Orders = ordersEnumerable.ToList();
-            OrderDetails = orderDetailsEnumerable.ToList();
+            _categories = categoriesEnumerable.ToList();
+            _products = productsEnumerable.ToList();
+            _orders = ordersEnumerable.ToList();
+            _orderDetails = orderDetailsEnumerable.ToList();
 
             UpdateObjectReferences();
         }
@@ -45,32 +68,9 @@ namespace Northwind
         /// </summary>
         private void UpdateObjectReferences()
         {
-            Products.ForEach(p => p.GetCategoryReference(Categories));
+            _products.ForEach(p => p.GetCategoryReference(_categories));
 
-            OrderDetails.ForEach(o => o.GetProductReference(Products));
-        }
-
-        public List<Product> GetProducts()
-        {
-            return Products;
-        }
-
-        public List<Category> GetCategories()
-        {
-            return Categories;
-        }
-
-        public List<Order> GetOrders()
-        {
-            return Orders;
-        }
-
-        public void CreateOrder(Order order)
-        {
-            // Or store max in field variable.
-            var maxId = Orders.Max(x => x.OrderId);
-            order.OrderId = maxId + 1;
-            Orders.Add(order);
+            _orderDetails.ForEach(o => o.GetProductReference(_products));
         }
     }
 }

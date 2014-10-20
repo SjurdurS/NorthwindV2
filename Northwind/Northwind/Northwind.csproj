@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="NorthWind.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
