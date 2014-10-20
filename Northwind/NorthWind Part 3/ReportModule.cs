@@ -10,11 +10,11 @@ namespace NorthWind_Part_3
 
     public class ReportModule
     {
-        private NorthWindContext _context;
+        private readonly NorthWindContext _context;
 
         public ReportModule(NorthWindContext context)
         {
-            _context = context;
+            _context = context ?? new NorthWindContext();
 
         }
 
