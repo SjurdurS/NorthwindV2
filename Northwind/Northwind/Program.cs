@@ -13,7 +13,7 @@ namespace Northwind
 
             var nw = new NorthWind(r);
 
-            // Subscriber..
+            // Subscribe..
             nw.NewOrder += NewOrder_Load;
 
             nw.AddOrder("Doegn Netto", "Rued Langgaards Vej 23a", "Copenhagen", "South", "2300", "Denmark");

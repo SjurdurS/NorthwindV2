@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Northwind
 {
 
-    internal class NorthWind
+    public class NorthWind
     {
         public delegate void NewOrderEventHandler(Object sender, NewOrderEventArgs e);
 

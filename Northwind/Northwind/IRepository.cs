@@ -2,7 +2,7 @@
 
 namespace Northwind
 {
-    internal interface IRepository
+    public interface IRepository
     {
         /// <summary>
         ///     Returns all products.

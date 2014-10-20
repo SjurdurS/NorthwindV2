@@ -4,7 +4,7 @@ using LINQtoCSV;
 
 namespace Northwind
 {
-    internal class Repository : IRepository
+    public class Repository : IRepository
     {
         private List<Category> _categories;
         private List<OrderDetail> _orderDetails;
