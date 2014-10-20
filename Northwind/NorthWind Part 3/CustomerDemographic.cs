@@ -6,8 +6,7 @@ namespace NorthWind_Part_3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class CustomerDemogr
-        aphic
+    public partial class CustomerDemographic
     {
         public CustomerDemographic()
         {
