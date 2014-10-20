@@ -7,3 +7,4 @@ C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Nor
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.pdb
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.Properties.Resources.resources
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Debug\Northwind.csproj.GenerateResource.Cache
+C:\Users\Nicolai\Source\Repos\Assignment402\Northwind\Northwind\bin\Debug\Northwind.exe.config
