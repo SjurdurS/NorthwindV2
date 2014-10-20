@@ -2,6 +2,9 @@
 
 namespace Northwind
 {
+    /// <summary>
+    ///     This class represents a Category in the NorthWind System.
+    /// </summary>
     public class Category
     {
         [CsvColumn(Name = "CategoryID")]

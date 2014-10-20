@@ -4,6 +4,9 @@ using LINQtoCSV;
 
 namespace Northwind
 {
+    /// <summary>
+    ///     This class represents a Product in the NorthWind System.
+    /// </summary>
     public class Product
     {
         public Category Category;
