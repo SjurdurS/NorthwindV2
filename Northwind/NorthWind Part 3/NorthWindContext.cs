@@ -7,6 +7,7 @@ namespace NorthWind_Part_3
 {
     public interface INorthWindContext : IDisposable
     {
+
         /// <summary>
         ///     Returns all products.
         /// </summary>
