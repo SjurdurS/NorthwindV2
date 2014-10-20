@@ -3,6 +3,9 @@ using LINQtoCSV;
 
 namespace Northwind
 {
+    /// <summary>
+    /// This class represents an order in northwind project. 
+    /// </summary>
     public class Order
     {
         [CsvColumn(Name = "OrderID")]
