@@ -13,8 +13,8 @@ namespace NorthWind_Part_3
             using (var db = new NorthWindContext())
             {
                 var rm = new ReportModule(db);
-                var employeeSale = rm.EmployeeSale(4);
-                Console.WriteLine(employeeSale.Data.EmployeeName);
+                var topOrdersByTotalPrice = rm.TopOrdersByTotalPrice(4);
+                topOrdersByTotalPrice.Data.ToList().ForEach(x => Console.WriteLine(x.TotalPriceWithDiscount));
             }
         }
     }

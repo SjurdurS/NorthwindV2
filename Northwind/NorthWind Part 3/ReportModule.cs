@@ -38,7 +38,7 @@ namespace NorthWind_Part_3
                 OrderDate = order.OrderDate,
                 CustomerContactName = order.Customers.ContactName,
                 TotalPriceWithDiscount =
-                    order.Order_Details.Sum(od => (decimal) (1 - od.Discount) * od.UnitPrice*od.Quantity),
+                    order.Order_Details.Sum(od => (1 - od.Discount) * (double)(od.UnitPrice * od.Quantity)),
                 TotalPrice = order.Order_Details.Sum(od => od.UnitPrice*od.Quantity)
             }).ToList();
 
@@ -75,7 +75,7 @@ namespace NorthWind_Part_3
                     select new UnitsSoldByMonthDto
                     {
                         UnitsSold = odm.Sum(totalSold => totalSold.Quantity),
-                        Count = odm.Select(totalOrders => totalOrders.OrderID).Distinct().Count(),
+                        Count = odm.Select(totalOrders => totalOrders.OrderId).Distinct().Count(),
                         Month = odm.Key.month,
                         Year = odm.Key.year
                     }).ToList()
@@ -156,7 +156,7 @@ namespace NorthWind_Part_3
         public int OrderId { get; set; }
         public DateTime? OrderDate { get; set; }
         public string CustomerContactName { get; set; }
-        public decimal TotalPriceWithDiscount { get; set; }
+        public double TotalPriceWithDiscount { get; set; }
         public decimal TotalPrice { get; set; }
     }
 

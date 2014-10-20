@@ -12,7 +12,7 @@ namespace NorthWind_Part_3
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int OrderID { get; set; }
+        public int OrderId { get; set; }
 
         [Key]
         [Column(Order = 1)]
@@ -24,7 +24,7 @@ namespace NorthWind_Part_3
 
         public short Quantity { get; set; }
 
-        public float Discount { get; set; }
+        public double Discount { get; set; }
 
         public virtual Order Order { get; set; }
 
