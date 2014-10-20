@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Northwind
 {
@@ -9,10 +10,10 @@ namespace Northwind
             var r = new Repository();
             r.LoadFiles();
 
-            foreach (Order item in r.GetOrders())
-            {
-                Console.WriteLine(item.ShipName);
-            }
+            NorthWind nw = new NorthWind(r);
+
+            // Subscriber..
+            
         }
     }
 }

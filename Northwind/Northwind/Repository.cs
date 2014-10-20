@@ -11,27 +11,28 @@ namespace Northwind
         private List<Order> _orders;
         private List<Product> _products;
 
-        public IEnumerable<Product> Products()
+        public List<Product> Products()
         {
             return _products;
         }
 
-        public IEnumerable<Category> Categories()
+        public List<Category> Categories()
         {
             return _categories;
         }
 
-        public IEnumerable<Order> Orders()
+        public List<Order> Orders()
         {
             return _orders;
         }
 
-        public void CreateOrder(Order order)
+        public long CreateOrder(Order order)
         {
             // Or store max in field variable.
             long maxId = _orders.Max(x => x.OrderId);
             order.OrderId = maxId + 1;
             _orders.Add(order);
+            return maxId;
         }
 
         /// <summary>
@@ -72,5 +73,6 @@ namespace Northwind
 
             _orderDetails.ForEach(o => o.GetProductReference(_products));
         }
+
     }
 }
