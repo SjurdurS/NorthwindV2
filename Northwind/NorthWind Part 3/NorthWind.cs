@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace NorthWind_Part_3
 {
-    internal class NorthWind : IDisposable
+    public class NorthWind : IDisposable
     {
         public delegate void NewOrderEventHandler(Object sender, NewOrderEventArgs e);
 
