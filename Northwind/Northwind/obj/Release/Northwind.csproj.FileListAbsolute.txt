@@ -1,0 +1,9 @@
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Release\Northwind.exe.config
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Release\Northwind.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Release\Northwind.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\bin\Release\LINQtoCSV.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Release\Northwind.csprojResolveAssemblyReference.cache
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Release\Northwind.Properties.Resources.resources
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Release\Northwind.csproj.GenerateResource.Cache
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Release\Northwind.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assigment40\Northwind\Northwind\obj\Release\Northwind.pdb
