@@ -38,7 +38,7 @@ namespace NorthWind_Part_3
                 OrderDate = order.OrderDate,
                 CustomerContactName = order.Customers.ContactName,
                 TotalPriceWithDiscount =
-                    order.Order_Details.Sum(od => (1 - od.Discount) * (double)(od.UnitPrice * od.Quantity)),
+                    order.Order_Details.Sum(od => (1 - od.Discount) * (float?)(od.UnitPrice * od.Quantity)),
                 TotalPrice = order.Order_Details.Sum(od => od.UnitPrice*od.Quantity)
             }).ToList();
 
@@ -156,7 +156,7 @@ namespace NorthWind_Part_3
         public int OrderId { get; set; }
         public DateTime? OrderDate { get; set; }
         public string CustomerContactName { get; set; }
-        public double TotalPriceWithDiscount { get; set; }
+        public float? TotalPriceWithDiscount { get; set; } // We had issues with casting of Number types so we chose to use Float instead of Decimal
         public decimal TotalPrice { get; set; }
     }
 

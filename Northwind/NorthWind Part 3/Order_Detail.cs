@@ -24,7 +24,7 @@ namespace NorthWind_Part_3
 
         public short Quantity { get; set; }
 
-        public double Discount { get; set; }
+        public float? Discount { get; set; }
 
         public virtual Order Order { get; set; }
 
