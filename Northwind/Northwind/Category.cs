@@ -1,19 +1,30 @@
-﻿using LINQtoCSV;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using LINQtoCSV;
 
-namespace Northwind
+namespace NorthWindNS
 {
-    /// <summary>
-    ///     This class represents a Category in the NorthWind System.
-    /// </summary>
     public class Category
     {
-        [CsvColumn(Name = "CategoryID")]
-        public long Id { get; set; }
+        public Category()
+        {
+            Products = new HashSet<Product>();
+        }
 
-        [CsvColumn(Name = "CategoryName")]
-        public string Name { get; set; }
+        [Key]
+        public int CategoryID { get; set; }
 
-        [CsvColumn(Name = "Description")]
+        [Required]
+        [StringLength(15)]
+        public string CategoryName { get; set; }
+
+        [Column(TypeName = "ntext")]
         public string Description { get; set; }
+
+        [Column(TypeName = "image")]
+        public byte[] Picture { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

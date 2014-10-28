@@ -1,43 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 
-namespace Northwind
+namespace NorthWindNS
 {
-
-    public class NorthWind
+    public class NorthWind : IDisposable
     {
         public delegate void NewOrderEventHandler(Object sender, NewOrderEventArgs e);
 
-        private readonly IRepository _repository;
+        private readonly IRepository _context;
 
-        /// <summary>
-        ///     Initialize a new NorthWind object.
-        /// </summary>
-        /// <param name="repository">The repository to use</param>
-        public NorthWind(IRepository repository)
+        public NorthWind(IRepository context)   // IRepository context = null
         {
-            _repository = repository;
+            _context = context;                 // ?? new DbRepository();
         }
 
-        public List<Product> Products
+        public virtual IQueryable<Product> Products
         {
-            get { return _repository.Products(); }
+            get
+            {
+                return _context.GetProducts;
+            }
         }
 
-        public List<Order> Orders
+        public virtual IQueryable<Order> Orders
         {
-            get { return _repository.Orders(); }
+            get
+            {
+                return _context.GetOrders;
+            }
         }
 
-        /// <summary>
-        ///     Add a new order to the repository. Creates a new order event that informs that this method has been invoked.
-        /// </summary>
-        /// <param name="name">Shipping name of the order.</param>
-        /// <param name="address">Shipping address of the order.</param>
-        /// <param name="city">Shipping city of the order.</param>
-        /// <param name="region">Shipping region of the order.</param>
-        /// <param name="postalCode">Shipping postal code of the order</param>
-        /// <param name="country">Shipping country of the order.</param>
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+
         public void AddOrder(string name, string address, string city, string region, string postalCode, string country)
         {
             var order = new Order
@@ -50,14 +48,13 @@ namespace Northwind
                 ShipCountry = country,
                 RequiredDate = DateTime.Now
             };
-
-            long id = _repository.CreateOrder(order);
-
+            long id = _context.CreateOrder(order);
             var args = new NewOrderEventArgs();
             args.orderId = id;
             args.orderDate = DateTime.Now;
             OnNewOrder(args);
         }
+
 
         public event EventHandler<NewOrderEventArgs> NewOrder;
 

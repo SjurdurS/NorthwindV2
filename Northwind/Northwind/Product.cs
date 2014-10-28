@@ -1,55 +1,59 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using LINQtoCSV;
 
-namespace Northwind
+namespace NorthWindNS
 {
-    /// <summary>
-    ///     This class represents a Product in the NorthWind System.
-    /// </summary>
     public class Product
     {
-        public Category Category;
+        public Product()
+        {
+            Order_Details = new HashSet<Order_Detail>();
+        }
 
-        [CsvColumn(Name = "ProductID")]
-        public long Id { get; set; }
+        [Key]
+        public int ProductID { get; set; }
 
-        [CsvColumn(Name = "ProductName")]
-        public string Name { get; set; }
+        [Required]
+        [StringLength(40)]
+        public string ProductName { get; set; }
 
-        [CsvColumn(Name = "SupplierID")]
-        public long SupplierId { get; set; }
+        public int? SupplierID { get; set; }
 
-        [CsvColumn(Name = "CategoryID")]
-        public long CategoryId { get; set; }
+        public int? CategoryID { get; set; }
 
-        [CsvColumn(Name = "QuantityPerUnit")]
+        [StringLength(20)]
         public string QuantityPerUnit { get; set; }
 
-        [CsvColumn(Name = "UnitPrice")]
-        public double UnitPrice { get; set; }
+        [Column(TypeName = "money")]
+        public decimal? UnitPrice { get; set; }
 
-        [CsvColumn(Name = "UnitsInStock")]
-        public int UnitsInStock { get; set; }
+        public short? UnitsInStock { get; set; }
 
-        [CsvColumn(Name = "UnitsOnOrder")]
-        public int UnitsOnOrder { get; set; }
+        public short? UnitsOnOrder { get; set; }
 
-        [CsvColumn(Name = "ReorderLevel")]
-        public int ReorderLevel { get; set; }
+        public short? ReorderLevel { get; set; }
 
-        [CsvColumn(Name = "Discontinued")]
-        public int Discontinued { get; set; }
+        public bool Discontinued { get; set; }
+
+
+        public virtual Category Category { get; set; }
+
+        public virtual ICollection<Order_Detail> Order_Details { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
 
         /// <summary>
         ///     Get the Category object reference. Search through a list of categories to find the same Category ID.
         /// </summary>
-        /// <param name="categories">IEnumerable of CategoriesEnumerable</param>
+        /// <param name="categories">List of GetCategories</param>
         public void GetCategoryReference(List<Category> categories)
         {
             Category = (from c in categories
-                where c.Id == CategoryId
-                select c).FirstOrDefault();
+                        where c.CategoryID == CategoryID
+                        select c).FirstOrDefault();
         }
     }
 }

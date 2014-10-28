@@ -1,53 +1,73 @@
-﻿using System;
-using LINQtoCSV;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
-namespace Northwind
+namespace NorthWindNS
 {
-    /// <summary>
-    ///     This class represents an order in the northwind project.
-    /// </summary>
     public class Order
     {
-        [CsvColumn(Name = "OrderID")]
-        public long OrderId { get; set; }
+        public Order()
+        {
+            Order_Details = new HashSet<Order_Detail>();
+        }
 
-        [CsvColumn(Name = "CustomerID")]
-        public string CustomerId { get; set; }
+        [Key]
+        public int OrderID { get; set; }
 
-        [CsvColumn(Name = "EmployeeID")]
-        public long EmployeeId { get; set; }
+        [StringLength(5)]
+        public string CustomerID { get; set; }
 
-        [CsvColumn(Name = "OrderDate")]
-        public DateTime OrderDate { get; set; }
+        public int? EmployeeID { get; set; }
 
-        [CsvColumn(Name = "RequiredDate")]
-        public DateTime RequiredDate { get; set; }
+        public DateTime? OrderDate { get; set; }
 
-        [CsvColumn(Name = "ShippedDate")]
-        public DateTime ShippedDate { get; set; }
+        public DateTime? RequiredDate { get; set; }
 
-        [CsvColumn(Name = "ShipVia")]
-        public int ShipVia { get; set; }
+        public DateTime? ShippedDate { get; set; }
 
-        [CsvColumn(Name = "Freight")]
-        public double Freight { get; set; }
+        public int? ShipVia { get; set; }
 
-        [CsvColumn(Name = "ShipName")]
+        [Column(TypeName = "money")]
+        public decimal? Freight { get; set; }
+
+        [StringLength(40)]
         public string ShipName { get; set; }
 
-        [CsvColumn(Name = "ShipAddress")]
+        [StringLength(60)]
         public string ShipAddress { get; set; }
 
-        [CsvColumn(Name = "ShipCity")]
+        [StringLength(15)]
         public string ShipCity { get; set; }
 
-        [CsvColumn(Name = "ShipRegion")]
+        [StringLength(15)]
         public string ShipRegion { get; set; }
 
-        [CsvColumn(Name = "ShipPostalCode")]
+        [StringLength(10)]
         public string ShipPostalCode { get; set; }
 
-        [CsvColumn(Name = "ShipCountry")]
+        [StringLength(15)]
         public string ShipCountry { get; set; }
+
+        public virtual Customers Customers { get; set; }
+
+        public virtual Employee Employee { get; set; }
+
+        public virtual ICollection<Order_Detail> Order_Details { get; set; }
+
+        public virtual Shipper Shipper { get; set; }
+
+        /// <summary>
+        ///     Get the OrderDetail object references. Search through a list of order details to find the same Order ID.
+        /// </summary>
+        /// <param name="orderDetails">List of Order_Details</param>
+        public void GetOrderDetailsReferences(List<Order_Detail> orderDetails)
+        {
+            var odReferences = (from od in orderDetails
+                where od.OrderId == OrderID
+                select od);
+            odReferences.ToList().ForEach(odReference => Order_Details.Add(odReference));
+        }
     }
 }
