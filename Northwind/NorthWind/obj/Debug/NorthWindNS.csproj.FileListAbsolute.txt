@@ -1,0 +1,22 @@
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NorthWindNS.exe.config
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NORTHWND.MDF
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NORTHWND_log.ldf
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NorthWindNS.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NorthWindNS.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\EntityFramework.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\obj\Debug\NorthWindNS.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\obj\Debug\NorthWindNS.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\obj\Debug\NorthWindNS.csprojResolveAssemblyReference.cache
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\NORTHWND.MDF
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\NORTHWND_log.ldf
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\NorthWindNS.exe.config
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\NorthWindNS.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\NorthWindNS.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\EntityFramework.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\LINQtoCSV.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\EntityFramework.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\obj\Debug\NorthWindNS.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind\obj\Debug\NorthWindNS.pdb

@@ -1,0 +1,12 @@
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NorthWind_Part_2_And_3_Merged.exe.config
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NORTHWND.MDF
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NORTHWND_log.ldf
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NorthWind_Part_2_And_3_Merged.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\NorthWind_Part_2_And_3_Merged.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\EntityFramework.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\LINQtoCSV.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\EntityFramework.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\obj\Debug\NorthWind_Part_2_And_3_Merged.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\NorthWind Part 3\obj\Debug\NorthWind_Part_2_And_3_Merged.pdb
