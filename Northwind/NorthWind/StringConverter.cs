@@ -39,7 +39,7 @@ namespace NorthWindNS
         public static decimal? ToNullableDecimal(string inputString)
         {
             decimal result;
-            if (Decimal.TryParse(inputString, out result))
+            if (Decimal.TryParse(inputString, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
             {
                 return result;
             }
@@ -49,8 +49,8 @@ namespace NorthWindNS
         public static float? ToNullableFloat(string inputString)
         {
             float result;
-            if (float.TryParse(inputString, out result))
-            {
+            if (float.TryParse(inputString, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
+            { 
                 return result;
             }
             return null;

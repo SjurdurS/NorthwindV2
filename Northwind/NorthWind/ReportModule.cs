@@ -64,17 +64,19 @@ namespace NorthWindNS
                 ProductId = product.ProductID,
                 ProductName = product.ProductName,
                 UnitsSoldByMonth = (from od in product.Order_Details
+                    let orderDate = od.Order.OrderDate
+                    where orderDate != null
                     group od by
                         new
                         {
-                            month = od.Order.OrderDate.Value.Month,
-                            year = od.Order.OrderDate.Value.Year
+                            month = orderDate.Value.Month,
+                            year = orderDate.Value.Year
                         }
                     into odm
                     select new UnitsSoldByMonthDto
                     {
                         UnitsSold = odm.Sum(totalSold => totalSold.Quantity),
-                        Count = odm.Select(totalOrders => totalOrders.OrderId).Distinct().Count(),
+                        Count = odm.Select(totalOrders => totalOrders.Order.OrderID).Distinct().Count(),
                         Month = odm.Key.month,
                         Year = odm.Key.year
                     }).ToList()

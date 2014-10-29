@@ -30,16 +30,5 @@ namespace NorthWindNS
         public virtual Order Order { get; set; }
 
         public virtual Product Product { get; set; }
-
-        /// <summary>
-        ///     Get the Product object reference. Search through a list of categories to find the same product ID.
-        /// </summary>
-        /// <param name="products">List of GetProducts</param>
-        public void GetProductReference(List<Product> products)
-        {
-            Product = (from p in products
-                where p.ProductID == ProductID
-                select p).FirstOrDefault();
-        }
     }
 }

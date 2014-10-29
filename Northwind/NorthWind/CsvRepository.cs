@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
 namespace NorthWindNS
 {
+    /// <summary>
+    /// </summary>
     public class CsvRepository : IRepository
     {
-        private List<Category> _categories;
-        private List<Order_Detail> _orderDetails;
-        private List<Order> _orders;
-        private List<Product> _products;
+        private List<Category> _categories = new List<Category>();
+        private List<Order_Detail> _orderDetails = new List<Order_Detail>();
+        private List<Order> _orders = new List<Order>();
+        private List<Product> _products = new List<Product>();
 
         public CsvRepository()
         {
@@ -58,6 +61,9 @@ namespace NorthWindNS
 
         /// <summary>
         ///     Parse the CSV files into the repository.
+        ///     Parsing removes relational IDs but keeps Primary keys of the entities.
+        ///     We reuse the entity classes that are also used by the Entity Framework
+        ///     for the DatabaseRepository to avoid duplication of the entity classes.
         /// </summary>
         public void LoadFiles()
         {
@@ -81,8 +87,9 @@ namespace NorthWindNS
                 {
                     ProductID = Convert.ToInt32(data[0]),
                     ProductName = data[1],
-                    SupplierID = StringConverter.ToNullableInt32(data[2]),
-                    CategoryID = StringConverter.ToNullableInt32(data[3]),
+                    Category = (from c in categoriesEnumerable
+                        where c.CategoryID == StringConverter.ToNullableInt32(data[3])
+                        select c).FirstOrDefault(),
                     QuantityPerUnit = data[4],
                     UnitPrice = StringConverter.ToNullableDecimal(data[5]),
                     UnitsInStock = StringConverter.ToNullableInt16(data[6]),
@@ -99,8 +106,6 @@ namespace NorthWindNS
                 select new Order
                 {
                     OrderID = Convert.ToInt32(data[0]),
-                    CustomerID = data[1],
-                    EmployeeID = StringConverter.ToNullableInt32(data[2]),
                     OrderDate = StringConverter.ToNullableDateTime(data[3]),
                     RequiredDate = StringConverter.ToNullableDateTime(data[4]),
                     ShippedDate = StringConverter.ToNullableDateTime(data[5]),
@@ -120,33 +125,24 @@ namespace NorthWindNS
                 let data = line.Split(';')
                 select new Order_Detail
                 {
-                    OrderId = Convert.ToInt32(data[0]),
-                    ProductID = Convert.ToInt32(data[1]),
-                    UnitPrice = Convert.ToDecimal(data[2]),
+                    Order = (from o in ordersEnumerable
+                        where o.OrderID == Convert.ToInt32(data[0])
+                        select o).FirstOrDefault(),
+                    Product = (from p in productsEnumerable
+                        where p.ProductID == Convert.ToInt32(data[1])
+                        select p).FirstOrDefault(),
+                    UnitPrice = Convert.ToDecimal(data[2], CultureInfo.InvariantCulture),
                     Quantity = Convert.ToInt16(data[3]),
                     Discount = StringConverter.ToNullableFloat(data[4])
                 };
-
 
             _categories = categoriesEnumerable.ToList();
             _products = productsEnumerable.ToList();
             _orders = ordersEnumerable.ToList();
             _orderDetails = orderDetailsEnumerable.ToList();
 
-            UpdateObjectReferences();
-        }
-
-
-        /// <summary>
-        ///     Update the Object references.
-        /// </summary>
-        private void UpdateObjectReferences()
-        {
-            _products.ForEach(p => p.GetCategoryReference(_categories));
-
-            _orderDetails.ForEach(od => od.GetProductReference(_products));
-
-            _orders.ForEach(order => order.GetOrderDetailsReferences(_orderDetails));
+            _orders.ForEach(x => x.GetOrderDetailsReferences(_orderDetails));
+            _products.ForEach(x => x.GetOrderDetailsReferences(_orderDetails));
         }
     }
 }

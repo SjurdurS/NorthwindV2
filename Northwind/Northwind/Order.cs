@@ -59,13 +59,14 @@ namespace NorthWindNS
         public virtual Shipper Shipper { get; set; }
 
         /// <summary>
-        ///     Get the OrderDetail object references. Search through a list of order details to find the same Order ID.
+        ///     Get the OrderDetail object references. 
+        ///     Search through a collection of order details to find the ones that reference to this Order.
         /// </summary>
-        /// <param name="orderDetails">List of Order_Details</param>
-        public void GetOrderDetailsReferences(List<Order_Detail> orderDetails)
+        /// <param name="orderDetails">IEnumerable of Order_Details</param>
+        public void GetOrderDetailsReferences(IEnumerable<Order_Detail> orderDetails)
         {
             var odReferences = (from od in orderDetails
-                where od.OrderId == OrderID
+                where od.Order.OrderID == this.OrderID
                 select od);
             odReferences.ToList().ForEach(odReference => Order_Details.Add(odReference));
         }

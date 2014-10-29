@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace NorthWindNS
 {
@@ -46,14 +47,16 @@ namespace NorthWindNS
         public virtual Supplier Supplier { get; set; }
 
         /// <summary>
-        ///     Get the Category object reference. Search through a list of categories to find the same Category ID.
+        ///     Get the OrderDetail object references. 
+        ///     Search through a collection of order details to find the ones that reference to this Product.
         /// </summary>
-        /// <param name="categories">List of GetCategories</param>
-        public void GetCategoryReference(List<Category> categories)
+        /// <param name="orderDetails">IEnumerable of Order_Details</param>
+        public void GetOrderDetailsReferences(IEnumerable<Order_Detail> orderDetails)
         {
-            Category = (from c in categories
-                        where c.CategoryID == CategoryID
-                        select c).FirstOrDefault();
+            var odReferences = (from od in orderDetails
+                                where od.Product.ProductID == this.ProductID
+                                select od);
+            odReferences.ToList().ForEach(odReference => Order_Details.Add(odReference));
         }
     }
 }

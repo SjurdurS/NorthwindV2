@@ -9,9 +9,9 @@ namespace NorthWindNS
 
         private readonly IRepository _context;
 
-        public NorthWind(IRepository context)   // IRepository context = null
+        public NorthWind(IRepository context)
         {
-            _context = context;                 // ?? new DbRepository();
+            _context = context;
         }
 
         public virtual IQueryable<Product> Products
