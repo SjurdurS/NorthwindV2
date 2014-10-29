@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace NorthWindNS
 {
-    public class NorthWind : IDisposable
+    public class NorthWind : IDisposable 
     {
         public delegate void NewOrderEventHandler(Object sender, NewOrderEventArgs e);
 
