@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 
-
 namespace NorthWindNS
 {
     public interface IRepository : IDisposable
@@ -31,6 +30,5 @@ namespace NorthWindNS
         /// <param name="order">The Order to add to the repository</param>
         /// <returns>Returns the id of the newly added order</returns>
         int CreateOrder(Order order);
-
     }
 }
