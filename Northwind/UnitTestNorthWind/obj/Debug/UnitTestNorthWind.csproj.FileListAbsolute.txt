@@ -26,3 +26,17 @@ C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\U
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNothWind\obj\Debug\UnitTestNorthWind.csprojResolveAssemblyReference.cache
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNothWind\obj\Debug\UnitTestNothWind_Part_3.dll
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNothWind\obj\Debug\UnitTestNothWind_Part_3.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\NORTHWND.MDF
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\NORTHWND_log.ldf
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\UnitTestNothWind_Part_3.dll.config
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\UnitTestNothWind_Part_3.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\UnitTestNothWind_Part_3.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\EntityFramework.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\NorthwindNS.exe
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\NorthwindNS.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\EntityFramework.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\obj\Debug\UnitTestNorthwind.csprojResolveAssemblyReference.cache
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\obj\Debug\UnitTestNothWind_Part_3.dll
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\UnitTestNorthwind\obj\Debug\UnitTestNothWind_Part_3.pdb

@@ -63,7 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NorthWind\NorthwindNS.csproj">
+    <ProjectReference Include="..\Northwind\NorthwindNS.csproj">
       <Project>{3ef9436c-8184-45a8-863b-08a37f4ca2d5}</Project>
       <Name>NorthwindNS</Name>
     </ProjectReference>
