@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NorthWindNS;
+using NorthwindNS;
 
-namespace UnitTestNorthWind
+namespace UnitTestNorthwind
 {
     [TestClass]
     public class UnitTestReportModule

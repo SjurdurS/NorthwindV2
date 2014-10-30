@@ -1,4 +1,4 @@
-namespace NorthWindNS
+namespace NorthwindNS
 {
     using System;
     using System.Collections.Generic;

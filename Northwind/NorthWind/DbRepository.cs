@@ -1,7 +1,7 @@
 using System.Data.Entity;
 using System.Linq;
 
-namespace NorthWindNS
+namespace NorthwindNS
 {
     public class DbRepository : DbContext, IRepository
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NorthWindNS
+namespace NorthwindNS
 {
     internal class Program
     {

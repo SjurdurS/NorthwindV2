@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace NorthWindNS
+namespace NorthwindNS
 {
     public static class StringConverter
     {

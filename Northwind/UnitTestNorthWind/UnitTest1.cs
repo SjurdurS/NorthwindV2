@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NorthWindNS;
+using NorthwindNS;
 
-namespace UnitTestNorthWind
+namespace UnitTestNorthwind
 {
     [TestClass]
     public class UnitTest1

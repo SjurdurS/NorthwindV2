@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace NorthWindNS
+namespace NorthwindNS
 {
     public class NorthWind : IDisposable 
     {

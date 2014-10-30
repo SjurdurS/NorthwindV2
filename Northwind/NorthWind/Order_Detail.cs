@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace NorthWindNS
+namespace NorthwindNS
 {
     [Table("Order Details")]
     public class Order_Detail

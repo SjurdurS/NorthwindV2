@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindNS", "..\NorthWind\NorthWindNS.csproj", "{3EF9436C-8184-45A8-863B-08A37F4CA2D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindNS", "NorthwindNS.csproj", "{3EF9436C-8184-45A8-863B-08A37F4CA2D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestNorthWind", "..\UnitTestNorthWind\UnitTestNorthWind.csproj", "{08348E17-4D94-4ED6-94D1-CCA5F6E28987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestNorthwind", "..\UnitTestNorthWind\UnitTestNorthwind.csproj", "{08348E17-4D94-4ED6-94D1-CCA5F6E28987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

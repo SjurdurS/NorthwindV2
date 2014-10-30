@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace NorthWindNS
+namespace NorthwindNS
 {
     public class Product
     {
