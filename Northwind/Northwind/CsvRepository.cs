@@ -7,6 +7,7 @@ using System.Linq;
 namespace NorthwindNS
 {
     /// <summary>
+    /// 
     /// </summary>
     public class CsvRepository : IRepository
     {
