@@ -76,7 +76,7 @@
     <Compile Include="Customers.cs" />
     <Compile Include="DbRepository.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="FileLoader.cs" />
+    <Compile Include="ICsvFileLoader.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Order_Detail.cs" />
