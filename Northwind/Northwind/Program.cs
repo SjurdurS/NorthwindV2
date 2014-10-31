@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace NorthwindNS
@@ -16,6 +17,7 @@ namespace NorthwindNS
             var csvRepository = new CsvRepository(new CsvFileLoader());
 
             var nwCsvPart2 = new NorthWind(csvRepository);
+
 
             // Subscribe..
             nwCsvPart2.NewOrder += NewOrder_Load;
