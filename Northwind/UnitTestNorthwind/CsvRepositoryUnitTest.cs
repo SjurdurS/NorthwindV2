@@ -108,20 +108,18 @@ namespace UnitTestNorthwind
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
 
             ICollection<Order_Detail> orderDetails = (from order in csvRepository.GetOrders
-                where order.OrderID == 10250
-                select order.Order_Details).FirstOrDefault();
+                                                      where order.OrderID == 10250
+                                                      select order.Order_Details).FirstOrDefault();
 
-            IEnumerable<string> orderProductNames = (from od in orderDetails
-                select od.Product.ProductName);
+            List<string> orderProductNames = (from od in orderDetails
+                                              select od.Product.ProductName).ToList();
 
-            var expectedProductNames = new List<object>();
-
+            var expectedProductNames = new List<string>();
             expectedProductNames.Add("Aniseed Syrup");
             expectedProductNames.Add("Chef Anton's Cajun Seasoning");
             expectedProductNames.Add("Chef Anton's Gumbo Mix");
-            IEnumerable<object> expectedProductNamesEnumerable = expectedProductNames.AsEnumerable();
 
-            bool result = expectedProductNames.SequenceEqual(expectedProductNamesEnumerable);
+            bool result = orderProductNames.All(expectedProductNames.Contains) && orderProductNames.Count == expectedProductNames.Count; ;
 
             Assert.IsTrue(result);
         }

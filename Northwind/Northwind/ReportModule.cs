@@ -27,7 +27,7 @@ namespace NorthwindNS
         /// </summary>
         /// <param name="count">The number of GetOrders to get.</param>
         /// <returns>Returns at most "count" number of GetOrders.</returns>
-        public Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
+        public virtual Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
         {
 
             var topOrdersByTotalPrice =
@@ -54,7 +54,7 @@ namespace NorthwindNS
         /// </summary>
         /// <param name="count">The number of GetProducts to get.</param>
         /// <returns>Returns at most "count" number of GetProducts.</returns>
-        public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
+        public virtual Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
         {
             var topProductsBySale =
                 _context.Products.OrderByDescending(product => product.Order_Details.Sum(od => od.Quantity));
@@ -85,7 +85,7 @@ namespace NorthwindNS
             return new Report<IList<ProductsBySaleDto>, ReportError>() {Data = topCountProductsBySale, Error = null};
         }
 
-        public Report<EmployeeSaleDto, ReportError> EmployeeSale(int id)
+        public virtual Report<EmployeeSaleDto, ReportError> EmployeeSale(int id)
         {
 
             try

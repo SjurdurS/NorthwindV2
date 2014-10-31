@@ -40,44 +40,6 @@ namespace NorthwindNS
             shippingCountryCount.ForEach(
                 shippingCountry => Console.WriteLine(shippingCountry.ShipCountry + " - " + shippingCountry.Count));
 
-
-            var csvRepository2 = new CsvRepository();
-            var nw1 = new NorthWind(csvRepository2);
-            Console.WriteLine("\nTest CSV 1:");
-            List<Order> csvOrders = nw1.Orders.AsEnumerable().Take(10).ToList();
-            foreach (Order order in csvOrders)
-            {
-                order.Order_Details.ToList().ForEach(x => Console.WriteLine(x.Order.OrderID + " " + x.UnitPrice));
-            }
-
-
-            var dbRepository = new DbRepository();
-            var nw = new NorthWind(dbRepository);
-            Console.WriteLine("\nTest DB1:");
-            List<Order> dbOrders = nw.Orders.AsEnumerable().Take(10).ToList();
-            foreach (Order order in dbOrders)
-            {
-                order.Order_Details.ToList().ForEach(x => Console.WriteLine(x.Order.OrderID + " " + x.UnitPrice));
-            }
-
-
-            Console.WriteLine("\nTest2:");
-
-            List<Product> products2 = nw.Products.AsEnumerable().Skip(10).Take(10).ToList();
-
-            foreach (Product product in products2)
-            {
-                Console.WriteLine("Product2 name " + product.ProductID);
-            }
-
-
-            Console.WriteLine("\nTest3:");
-            List<Product> products3 = nw.Products.AsEnumerable().Take(10).ToList();
-
-            foreach (Product product in products3)
-            {
-                Console.WriteLine("Product3 name " + product.ProductID);
-            }
         }
     }
 }

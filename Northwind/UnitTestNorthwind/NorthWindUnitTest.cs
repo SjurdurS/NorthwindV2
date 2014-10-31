@@ -11,40 +11,40 @@ namespace UnitTestNorthwind
         [TestMethod]
         public void Test_AddOrder()
         {
-            var mockNorthWind = new Mock<IRepository>();
+            var mockRository = new Mock<IRepository>();
 
-            mockNorthWind.Setup(t => t.CreateOrder(It.IsAny<Order>())).Returns(1);
+            mockRository.Setup(t => t.CreateOrder(It.IsAny<Order>())).Returns(1);
 
-            var northWind = new NorthWind(mockNorthWind.Object);
+            var northWind = new NorthWind(mockRository.Object);
             northWind.AddOrder("", "", "", "", "", "");
 
-            mockNorthWind.Verify(t => t.CreateOrder(It.IsAny<Order>()));
+            mockRository.Verify(t => t.CreateOrder(It.IsAny<Order>()));
         }
 
         [TestMethod]
         public void Test_Orders()
         {
-            var mockNorthWind = new Mock<IRepository>();
+            var mockRository = new Mock<IRepository>();
 
-            mockNorthWind.Setup(t => t.GetOrders).Returns(It.IsAny<IQueryable<Order>>);
+            mockRository.Setup(t => t.GetOrders).Returns(It.IsAny<IQueryable<Order>>);
 
-            var northWind = new NorthWind(mockNorthWind.Object);
+            var northWind = new NorthWind(mockRository.Object);
             IQueryable<Order> orders = northWind.Orders;
 
-            mockNorthWind.Verify(t => t.GetOrders);
+            mockRository.Verify(t => t.GetOrders);
         }
 
         [TestMethod]
         public void Test_Products()
         {
-            var mockNorthWind = new Mock<IRepository>();
+            var mockRository = new Mock<IRepository>();
 
-            mockNorthWind.Setup(t => t.GetProducts).Returns(It.IsAny<IQueryable<Product>>);
+            mockRository.Setup(t => t.GetProducts).Returns(It.IsAny<IQueryable<Product>>);
 
-            var northWind = new NorthWind(mockNorthWind.Object);
+            var northWind = new NorthWind(mockRository.Object);
             IQueryable<Product> orders = northWind.Products;
 
-            mockNorthWind.Verify(t => t.GetProducts);
+            mockRository.Verify(t => t.GetProducts);
         }
     }
 }

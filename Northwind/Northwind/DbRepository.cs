@@ -24,22 +24,22 @@ namespace NorthwindNS
         public virtual DbSet<Territory> Territories { get; set; }
 
 
-        public IQueryable<Order> GetOrders
+        public virtual IQueryable<Order> GetOrders
         {
             get { return Orders.Select(order => order).AsQueryable(); }
         }
 
-        public IQueryable<Product> GetProducts
+        public virtual IQueryable<Product> GetProducts
         {
             get { return Products.Select(order => order).AsQueryable(); }
         }
 
-        public IQueryable<Category> GetCategories
+        public virtual IQueryable<Category> GetCategories
         {
             get { return Categories.Select(order => order).AsQueryable(); }
         }
 
-        public int CreateOrder(Order order)
+        public virtual int CreateOrder(Order order)
         {
             int maxId = Orders.Max(x => x.OrderID);
             order.OrderID = maxId + 1;
