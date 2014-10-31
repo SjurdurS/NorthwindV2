@@ -15,22 +15,26 @@ namespace NorthwindNS
         private List<Order> _orders = new List<Order>();
         private List<Product> _products = new List<Product>();
 
-        public CsvRepository()
+        /// <summary>
+        ///     Instantiate a new CsvRepository.
+        /// </summary>
+        /// <param name="csvFileLoader"></param>
+        public CsvRepository(ICsvFileLoader csvFileLoader = null)
         {
-            LoadFiles();
+            LoadFiles(csvFileLoader ?? new CsvFileLoader());
         }
 
-        public IQueryable<Category> GetCategories
+        public virtual IQueryable<Category> GetCategories
         {
             get { return _categories.AsQueryable(); }
         }
 
-        public IQueryable<Order> GetOrders
+        public virtual IQueryable<Order> GetOrders
         {
             get { return _orders.AsQueryable(); }
         }
 
-        public IQueryable<Product> GetProducts
+        public virtual IQueryable<Product> GetProducts
         {
             get { return _products.AsQueryable(); }
         }
@@ -40,10 +44,15 @@ namespace NorthwindNS
         /// </summary>
         /// <param name="order">The order to create</param>
         /// <returns>Returns the new maximum id in the list.</returns>
-        public int CreateOrder(Order order)
+        public virtual int CreateOrder(Order order)
         {
             // Or store max in field variable.
-            int maxId = _orders.Max(x => x.OrderID);
+            int maxId = 0;
+            if (_orders.Any())
+            {
+                maxId = _orders.Max(x => x.OrderID);
+            }
+
             order.OrderID = maxId + 1;
             _orders.Add(order);
             return (maxId + 1);
@@ -54,7 +63,7 @@ namespace NorthwindNS
             // Do nothing.
         }
 
-        public int SaveChanges()
+        public virtual int SaveChanges()
         {
             return 0; // Does nothing
         }
@@ -65,9 +74,9 @@ namespace NorthwindNS
         ///     We reuse the entity classes that are also used by the Entity Framework
         ///     for the DatabaseRepository to avoid duplication of the entity classes.
         /// </summary>
-        public void LoadFiles()
+        private void LoadFiles(ICsvFileLoader csvFileLoader)
         {
-            string[] allLinesCategories = File.ReadAllLines(@"../../Resources/categories.csv").Skip(1).ToArray();
+            string[] allLinesCategories = csvFileLoader.categoryLines;
 
             IEnumerable<Category> categoriesEnumerable = from line in allLinesCategories
                 let data = line.Split(';')
@@ -79,7 +88,7 @@ namespace NorthwindNS
                 };
 
 
-            string[] allLinesProducts = File.ReadAllLines(@"../../Resources/products.csv").Skip(1).ToArray();
+            string[] allLinesProducts = csvFileLoader.productLines;
 
             IEnumerable<Product> productsEnumerable = from line in allLinesProducts
                 let data = line.Split(';')
@@ -99,7 +108,7 @@ namespace NorthwindNS
                 };
 
 
-            string[] allLinesOrders = File.ReadAllLines(@"../../Resources/orders.csv").Skip(1).ToArray();
+            string[] allLinesOrders = csvFileLoader.orderLines;
 
             IEnumerable<Order> ordersEnumerable = from line in allLinesOrders
                 let data = line.Split(';')
@@ -119,7 +128,7 @@ namespace NorthwindNS
                     ShipCountry = data[13]
                 };
 
-            string[] allLinesOrderDetails = File.ReadAllLines(@"../../Resources/order_details.csv").Skip(1).ToArray();
+            string[] allLinesOrderDetails = csvFileLoader.orderDetailLines;
 
             IEnumerable<Order_Detail> orderDetailsEnumerable = from line in allLinesOrderDetails
                 let data = line.Split(';')

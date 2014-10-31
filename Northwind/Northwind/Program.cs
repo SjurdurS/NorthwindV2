@@ -13,8 +13,7 @@ namespace NorthwindNS
 
         private static void Main(string[] args)
         {
-            var csvRepository = new CsvRepository();
-            csvRepository.LoadFiles();
+            var csvRepository = new CsvRepository(new CsvFileLoader());
 
             var nwCsvPart2 = new NorthWind(csvRepository);
 

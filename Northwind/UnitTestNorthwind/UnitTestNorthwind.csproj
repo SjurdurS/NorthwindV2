@@ -6,8 +6,8 @@
     <ProjectGuid>{08348E17-4D94-4ED6-94D1-CCA5F6E28987}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestNothWind_Part_3</RootNamespace>
-    <AssemblyName>UnitTestNothWind_Part_3</AssemblyName>
+    <RootNamespace>UnitTestNorthwind</RootNamespace>
+    <AssemblyName>UnitTestNorthwind</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -41,6 +41,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\Northwind\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\Northwind\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
@@ -57,7 +60,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CsvRepositoryUnitTest.cs" />
+    <Compile Include="NorthWindUnitTest.cs" />
     <Compile Include="UnitTestRepository.cs" />
     <Compile Include="UnitTestReportModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

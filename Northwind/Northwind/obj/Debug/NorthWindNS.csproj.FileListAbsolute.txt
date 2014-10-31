@@ -20,3 +20,4 @@ C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\N
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\Northwind\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\Northwind\obj\Debug\NorthwindNS.exe
 C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\Northwind\obj\Debug\NorthwindNS.pdb
+C:\Users\Sjurdur\Documents\Visual Studio 2013\Projects\Assignment402\Northwind\Northwind\obj\Debug\NorthwindNS.csprojResolveAssemblyReference.cache
