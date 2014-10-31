@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\Northwind\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
@@ -46,6 +49,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -62,8 +66,8 @@
   <ItemGroup>
     <Compile Include="CsvRepositoryUnitTest.cs" />
     <Compile Include="NorthWindUnitTest.cs" />
-    <Compile Include="UnitTestRepository.cs" />
-    <Compile Include="UnitTestReportModule.cs" />
+    <Compile Include="DbRepositoryUnitTest.cs" />
+    <Compile Include="ReportModuleUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

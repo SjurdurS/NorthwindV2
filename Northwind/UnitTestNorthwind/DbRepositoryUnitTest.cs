@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NorthwindNS;
@@ -6,16 +7,22 @@ using NorthwindNS;
 namespace UnitTestNorthwind
 {
     [TestClass]
-    public class UnitTestRepository
+    public class DbRepositoryUnitTest
     {
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+        }
+
         [TestMethod]
         public void AddOrderToRepository_CheckTotalCount()
         {
             using (var db = new DbRepository())
             {
-                NorthWind nw = new NorthWind(db);
-                
-                int totalOrdersBefore = nw.Orders.Count();
+                var nw = new NorthWind(db);
+
+                int totalOrdersBefore = db.Orders.Count();
                 nw.AddOrder("Doegn Netto", "Rued Langgaards Vej 23a", "Copenhagen", "South", "2300", "Denmark");
                 db.SaveChanges();
                 int totalOrdersAfter = nw.Orders.Count();
@@ -29,9 +36,9 @@ namespace UnitTestNorthwind
         {
             using (var db = new DbRepository())
             {
-                NorthWind nw = new NorthWind(db);
-                var orders = nw.Orders;
-                var productName = (from o in orders
+                var nw = new NorthWind(db);
+                IQueryable<Order> orders = nw.Orders;
+                string productName = (from o in orders
                     where o.OrderID == 10571
                     select o.ShipName).FirstOrDefault();
 
@@ -46,9 +53,9 @@ namespace UnitTestNorthwind
         {
             using (var db = new DbRepository())
             {
-                NorthWind nw = new NorthWind(db);
-                var products = nw.Products;
-                var productName = (from p in products
+                var nw = new NorthWind(db);
+                IQueryable<Product> products = nw.Products;
+                string productName = (from p in products
                     where p.ProductID == 11
                     select p.ProductName).FirstOrDefault();
 
@@ -63,10 +70,8 @@ namespace UnitTestNorthwind
         {
             using (var db = new DbRepository())
             {
-
-
-                var categories = db.Categories;
-                var category = (from c in categories
+                DbSet<Category> categories = db.Categories;
+                Category category = (from c in categories
                     where c.CategoryID == 1
                     select c).FirstOrDefault();
 

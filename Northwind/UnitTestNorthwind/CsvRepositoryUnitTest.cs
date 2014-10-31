@@ -91,14 +91,13 @@ namespace UnitTestNorthwind
     public class CsvRepositoryUnitTest
     {
         [TestMethod]
-        public void Add_Order_To_Repository()
+        public void Test_Create_Order()
         {
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
-            var nw = new NorthWind(csvRepository);
 
-            int totalOrdersBefore = nw.Orders.Count();
-            nw.AddOrder("", "", "", "", "", "");
-            int totalOrdersAfter = nw.Orders.Count();
+            int totalOrdersBefore = csvRepository.GetOrders.Count();
+            csvRepository.CreateOrder(new Order());
+            int totalOrdersAfter = csvRepository.GetOrders.Count();
             Assert.AreEqual(totalOrdersBefore + 1, totalOrdersAfter);
         }
 
@@ -107,16 +106,15 @@ namespace UnitTestNorthwind
         public void Check_If_Order_With_ID_10250_References_Three_Specific_Products()
         {
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
-            var nw = new NorthWind(csvRepository);
 
-            var orderDetails = (from order in nw.Orders
+            ICollection<Order_Detail> orderDetails = (from order in csvRepository.GetOrders
                 where order.OrderID == 10250
                 select order.Order_Details).FirstOrDefault();
 
-            var orderProductNames = (from od in orderDetails
+            IEnumerable<string> orderProductNames = (from od in orderDetails
                 select od.Product.ProductName);
 
-            List<object> expectedProductNames = new List<object>();
+            var expectedProductNames = new List<object>();
 
             expectedProductNames.Add("Aniseed Syrup");
             expectedProductNames.Add("Chef Anton's Cajun Seasoning");
@@ -132,11 +130,10 @@ namespace UnitTestNorthwind
         public void Check_If_Order_With_ID_10248_References_Three_OrderDetails()
         {
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
-            var nw = new NorthWind(csvRepository);
 
-            var orderDetails = (from order in nw.Orders
-                                where order.OrderID == 10248
-                                select order.Order_Details).FirstOrDefault();
+            ICollection<Order_Detail> orderDetails = (from order in csvRepository.GetOrders
+                where order.OrderID == 10248
+                select order.Order_Details).FirstOrDefault();
 
             const int expectedResult = 3;
 
@@ -147,13 +144,12 @@ namespace UnitTestNorthwind
         public void Check_If_Product_Northwoods_Cranberry_Sauce_References_Category_Condiments()
         {
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
-            var nw = new NorthWind(csvRepository);
 
-            var northwoodsCranberrySauceCategoryName = (from p in nw.Products
+            string northwoodsCranberrySauceCategoryName = (from p in csvRepository.GetProducts
                 where p.ProductName == "Northwoods Cranberry Sauce"
                 select p.Category.CategoryName).FirstOrDefault();
 
-            var expectedResult = "Condiments";
+            string expectedResult = "Condiments";
 
             Assert.AreEqual(expectedResult, northwoodsCranberrySauceCategoryName);
         }
@@ -162,26 +158,36 @@ namespace UnitTestNorthwind
         public void Get_All_Products()
         {
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
-            var nw = new NorthWind(csvRepository);
 
-            var products = nw.Products.Count();
+            int products = csvRepository.GetProducts.Count();
 
             const int expectedResult = 10;
 
             Assert.AreEqual(expectedResult, products);
-        } 
-        
+        }
+
         [TestMethod]
         public void Get_All_Orders()
         {
             var csvRepository = new CsvRepository(new MockCsvFileLoader());
-            var nw = new NorthWind(csvRepository);
 
-            var orders = nw.Orders.Count();
+            int orders = csvRepository.GetOrders.Count();
 
             const int expectedResult = 10;
 
             Assert.AreEqual(expectedResult, orders);
-        }        
+        }
+
+        [TestMethod]
+        public void Get_All_Categories()
+        {
+            var csvRepository = new CsvRepository(new MockCsvFileLoader());
+
+            int orders = csvRepository.GetCategories.Count();
+
+            const int expectedResult = 2;
+
+            Assert.AreEqual(expectedResult, orders);
+        }
     }
 }

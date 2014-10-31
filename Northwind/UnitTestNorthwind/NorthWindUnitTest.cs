@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NorthwindNS;
 
-namespace UnitTestNothWind
+namespace UnitTestNorthwind
 {
     [TestClass]
     public class NorthWindUnitTest
@@ -26,7 +26,7 @@ namespace UnitTestNothWind
         {
             var mockNorthWind = new Mock<IRepository>();
 
-            mockNorthWind.Setup(t => t.GetOrders);
+            mockNorthWind.Setup(t => t.GetOrders).Returns(It.IsAny<IQueryable<Order>>);
 
             var northWind = new NorthWind(mockNorthWind.Object);
             IQueryable<Order> orders = northWind.Orders;
@@ -39,10 +39,10 @@ namespace UnitTestNothWind
         {
             var mockNorthWind = new Mock<IRepository>();
 
-            mockNorthWind.Setup(t => t.GetProducts);
+            mockNorthWind.Setup(t => t.GetProducts).Returns(It.IsAny<IQueryable<Product>>);
 
             var northWind = new NorthWind(mockNorthWind.Object);
-            IQueryable<Order> orders = northWind.Orders;
+            IQueryable<Product> orders = northWind.Products;
 
             mockNorthWind.Verify(t => t.GetProducts);
         }
